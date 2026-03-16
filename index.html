@@ -6,21 +6,23 @@
   <title>Finora | Investor Profile Assessment</title>
   <meta
     name="description"
-    content="Finora helps users explore investor profile, preferences, and a structured assessment flow with a calm, modern, reliability-focused experience."
+    content="Finora provides a structured investor profile assessment experience focused on clarity, reliability, and modern communication."
   />
+  <link rel="icon" type="image/png" href="favicon.png" />
+
   <style>
     :root{
-      --bg:#eef4f2;
+      --bg:#f3f7f5;
       --card:#ffffff;
-      --text:#0f2a25;
-      --muted:#59716b;
-      --line:rgba(15,42,37,.10);
-      --green:#178a67;
-      --green-2:#2fc18b;
-      --green-3:#0d5b46;
-      --dark:#071c18;
-      --shadow:0 14px 40px rgba(8,29,24,.12);
-      --radius:24px;
+      --text:#122922;
+      --muted:#5d746d;
+      --line:rgba(18,41,34,.10);
+      --green:#147a5d;
+      --green2:#2fc18b;
+      --green3:#0f5643;
+      --dark:#0b1d19;
+      --shadow:0 18px 48px rgba(8,31,24,.10);
+      --radius:26px;
       --max:1180px;
     }
 
@@ -28,12 +30,12 @@
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: Inter, Arial, Helvetica, sans-serif;
+      font-family:Inter, Arial, Helvetica, sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at top left, rgba(47,193,139,.12), transparent 30%),
-        radial-gradient(circle at top right, rgba(23,138,103,.10), transparent 28%),
-        linear-gradient(180deg,#f5f8f7 0%, #edf4f1 100%);
+        radial-gradient(circle at top left, rgba(47,193,139,.13), transparent 28%),
+        radial-gradient(circle at top right, rgba(20,122,93,.10), transparent 24%),
+        linear-gradient(180deg,#f8fbfa 0%, #eef5f2 100%);
     }
 
     a{text-decoration:none;color:inherit}
@@ -50,8 +52,8 @@
       top:0;
       z-index:20;
       backdrop-filter:blur(10px);
-      background:rgba(245,248,247,.78);
-      border-bottom:1px solid rgba(15,42,37,.06);
+      background:rgba(248,251,250,.80);
+      border-bottom:1px solid rgba(18,41,34,.06);
     }
 
     .nav-inner{
@@ -67,7 +69,7 @@
     .brand{
       display:flex;
       align-items:center;
-      gap:14px;
+      gap:12px;
       min-width:0;
     }
 
@@ -78,17 +80,17 @@
     }
 
     .brand-fallback{
-      width:54px;
-      height:54px;
-      border-radius:18px;
-      background:linear-gradient(135deg,var(--green-2),var(--green-3));
-      color:white;
+      width:50px;
+      height:50px;
+      border-radius:16px;
       display:none;
       align-items:center;
       justify-content:center;
+      background:linear-gradient(135deg,var(--green2),var(--green3));
+      color:white;
       font-weight:800;
-      font-size:24px;
-      box-shadow:0 10px 26px rgba(23,138,103,.22);
+      font-size:22px;
+      box-shadow:0 12px 26px rgba(20,122,93,.22);
     }
 
     .nav-links{
@@ -102,7 +104,7 @@
     .nav-actions{
       display:flex;
       align-items:center;
-      gap:12px;
+      gap:10px;
     }
 
     .btn{
@@ -110,69 +112,65 @@
       align-items:center;
       justify-content:center;
       gap:8px;
-      border-radius:999px;
       padding:14px 22px;
-      font-weight:700;
+      border-radius:999px;
       font-size:15px;
+      font-weight:700;
       transition:.18s ease;
       border:1px solid transparent;
       cursor:pointer;
     }
 
-    .btn:hover{
-      transform:translateY(-1px);
-    }
+    .btn:hover{transform:translateY(-1px)}
 
     .btn-primary{
-      background:linear-gradient(135deg,var(--green),var(--green-2));
-      color:white;
-      box-shadow:0 12px 24px rgba(23,138,103,.20);
+      background:linear-gradient(135deg,var(--green),var(--green2));
+      color:#fff;
+      box-shadow:0 12px 24px rgba(20,122,93,.18);
     }
 
     .btn-outline{
-      border-color:rgba(15,42,37,.12);
       background:#fff;
+      border-color:rgba(18,41,34,.10);
       color:var(--text);
     }
 
     .hero{
-      padding:56px 0 28px;
+      padding:56px 0 26px;
     }
 
     .hero-grid{
       display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:28px;
+      grid-template-columns:1.02fr .98fr;
+      gap:26px;
       align-items:stretch;
     }
 
-    .hero-copy,
-    .hero-card{
-      background:rgba(255,255,255,.76);
-      border:1px solid var(--line);
+    .hero-left,
+    .hero-right{
       border-radius:32px;
-      box-shadow:var(--shadow);
       overflow:hidden;
+      box-shadow:var(--shadow);
+      border:1px solid var(--line);
     }
 
-    .hero-copy{
+    .hero-left{
+      background:rgba(255,255,255,.84);
       padding:42px;
-      position:relative;
     }
 
     .eyebrow{
       display:inline-flex;
       align-items:center;
       gap:8px;
-      font-size:13px;
-      color:var(--green-3);
-      background:rgba(23,138,103,.08);
-      border:1px solid rgba(23,138,103,.10);
-      border-radius:999px;
       padding:8px 14px;
-      margin-bottom:22px;
+      border-radius:999px;
+      background:rgba(20,122,93,.08);
+      border:1px solid rgba(20,122,93,.10);
+      color:var(--green3);
+      font-size:13px;
       font-weight:700;
-      letter-spacing:.01em;
+      margin-bottom:20px;
     }
 
     h1{
@@ -182,12 +180,14 @@
       letter-spacing:-1.7px;
     }
 
+    .accent{color:var(--green)}
+
     .lead{
-      margin:22px 0 0;
-      max-width:660px;
-      color:var(--muted);
+      margin:20px 0 0;
       font-size:19px;
-      line-height:1.75;
+      line-height:1.78;
+      color:var(--muted);
+      max-width:650px;
     }
 
     .hero-actions{
@@ -197,82 +197,72 @@
       margin-top:28px;
     }
 
-    .badge-row{
+    .hero-badges{
       display:flex;
       flex-wrap:wrap;
       gap:10px;
-      margin-top:26px;
+      margin-top:24px;
     }
 
     .badge{
-      border:1px solid var(--line);
-      background:#fff;
-      border-radius:999px;
       padding:10px 14px;
-      font-size:14px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid var(--line);
       color:var(--muted);
+      font-size:14px;
     }
 
-    .hero-card{
+    .hero-right{
       position:relative;
       min-height:100%;
       background:
-        linear-gradient(180deg, rgba(4,21,18,.08), rgba(4,21,18,.32)),
+        linear-gradient(180deg, rgba(4,21,18,.08), rgba(4,21,18,.34)),
         url("hero.jpg") center/cover no-repeat,
-        linear-gradient(135deg,#0c201d,#0b332b 60%, #134f43);
-      color:white;
+        linear-gradient(135deg,#0c201d,#10372e 65%, #165247);
+      color:#fff;
     }
 
-    .hero-card::before{
+    .hero-right::before{
       content:"";
       position:absolute;
       inset:0;
       background:
-        radial-gradient(circle at 80% 25%, rgba(47,193,139,.22), transparent 22%),
-        linear-gradient(180deg, rgba(7,28,24,.22), rgba(7,28,24,.58));
+        radial-gradient(circle at 75% 18%, rgba(47,193,139,.26), transparent 22%),
+        linear-gradient(180deg, rgba(7,29,24,.20), rgba(7,29,24,.56));
       pointer-events:none;
     }
 
-    .hero-card-inner{
+    .hero-right-inner{
       position:relative;
       z-index:1;
+      min-height:560px;
       padding:28px;
-      height:100%;
       display:flex;
       flex-direction:column;
       justify-content:space-between;
-      min-height:560px;
     }
 
-    .hero-card-top{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      font-weight:700;
-      font-size:22px;
+    .hero-logo{
+      width:160px;
+      filter:brightness(1.06);
     }
 
-    .hero-card-top img{
-      width:150px;
-      height:auto;
-      filter:brightness(1.08);
-    }
-
-    .hero-card-title{
-      font-size:54px;
+    .hero-title{
+      margin-top:18px;
+      font-size:56px;
       line-height:1.02;
+      font-weight:800;
       letter-spacing:-1.5px;
       max-width:420px;
-      font-weight:800;
-      margin-top:22px;
     }
 
     .hero-panel{
-      background:rgba(9,32,27,.42);
+      background:rgba(8,31,25,.42);
       border:1px solid rgba(255,255,255,.12);
+      backdrop-filter:blur(10px);
       border-radius:28px;
       padding:22px;
-      backdrop-filter:blur(10px);
     }
 
     .hero-panel-grid{
@@ -283,13 +273,11 @@
     }
 
     .hero-panel-item{
-      padding:8px 8px;
       border-right:1px solid rgba(255,255,255,.12);
+      padding:6px 6px;
     }
 
-    .hero-panel-item:last-child{
-      border-right:none;
-    }
+    .hero-panel-item:last-child{border-right:none}
 
     .hero-panel-item strong{
       display:block;
@@ -299,7 +287,7 @@
 
     .hero-panel-item span{
       font-size:13px;
-      color:rgba(255,255,255,.78);
+      color:rgba(255,255,255,.80);
     }
 
     .section{
@@ -307,7 +295,7 @@
     }
 
     .section-card{
-      background:rgba(255,255,255,.74);
+      background:rgba(255,255,255,.82);
       border:1px solid var(--line);
       border-radius:30px;
       box-shadow:var(--shadow);
@@ -315,10 +303,6 @@
     }
 
     .section-head{
-      display:flex;
-      justify-content:space-between;
-      gap:20px;
-      align-items:end;
       margin-bottom:24px;
     }
 
@@ -329,10 +313,10 @@
     }
 
     .section-head p{
-      margin:8px 0 0;
+      margin:10px 0 0;
       color:var(--muted);
-      max-width:720px;
-      line-height:1.75;
+      line-height:1.8;
+      max-width:820px;
     }
 
     .three{
@@ -352,7 +336,7 @@
       width:42px;
       height:42px;
       border-radius:14px;
-      background:linear-gradient(135deg,var(--green-2),var(--green-3));
+      background:linear-gradient(135deg,var(--green2),var(--green3));
       color:#fff;
       display:flex;
       align-items:center;
@@ -375,9 +359,8 @@
 
     .trust-grid{
       display:grid;
-      grid-template-columns:1.1fr .9fr;
+      grid-template-columns:1.08fr .92fr;
       gap:20px;
-      align-items:stretch;
     }
 
     .list{
@@ -395,13 +378,13 @@
       border-radius:20px;
     }
 
-    .dot{
+    .point{
       width:12px;
       height:12px;
       border-radius:50%;
       margin-top:6px;
       flex:0 0 auto;
-      background:linear-gradient(135deg,var(--green-2),var(--green-3));
+      background:linear-gradient(135deg,var(--green2),var(--green3));
     }
 
     .list-item strong{
@@ -425,7 +408,6 @@
       display:flex;
       flex-direction:column;
       justify-content:space-between;
-      min-height:100%;
     }
 
     .side-card h3{
@@ -435,12 +417,12 @@
     }
 
     .side-card p{
-      color:rgba(255,255,255,.78);
+      color:rgba(255,255,255,.80);
       line-height:1.8;
       margin:14px 0 0;
     }
 
-    .whatsapp-box{
+    .contact-box{
       margin-top:22px;
       background:rgba(255,255,255,.08);
       border:1px solid rgba(255,255,255,.12);
@@ -448,9 +430,9 @@
       padding:18px;
     }
 
-    .whatsapp-box small{
+    .contact-box small{
       display:block;
-      color:rgba(255,255,255,.70);
+      color:rgba(255,255,255,.72);
       margin-top:8px;
       line-height:1.65;
       font-size:13px;
@@ -458,8 +440,8 @@
 
     .cta{
       background:
-        linear-gradient(135deg, rgba(23,138,103,.10), rgba(47,193,139,.08)),
-        #ffffff;
+        linear-gradient(135deg, rgba(20,122,93,.10), rgba(47,193,139,.08)),
+        #fff;
       border:1px solid var(--line);
       border-radius:30px;
       box-shadow:var(--shadow);
@@ -480,7 +462,25 @@
       margin:10px 0 0;
       color:var(--muted);
       line-height:1.8;
-      max-width:760px;
+      max-width:780px;
+    }
+
+    .floating-wa{
+      position:fixed;
+      right:22px;
+      bottom:22px;
+      z-index:30;
+      width:62px;
+      height:62px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg,#25d366,#128c7e);
+      color:#fff;
+      box-shadow:0 16px 36px rgba(18,140,126,.30);
+      font-size:26px;
+      border:3px solid rgba(255,255,255,.90);
     }
 
     .footer{
@@ -494,12 +494,12 @@
       justify-content:space-between;
       gap:20px;
       flex-wrap:wrap;
-      border-top:1px solid rgba(15,42,37,.08);
+      border-top:1px solid rgba(18,41,34,.08);
       padding-top:22px;
     }
 
     .footer-note{
-      max-width:820px;
+      max-width:860px;
       line-height:1.75;
     }
 
@@ -510,9 +510,8 @@
       .three{
         grid-template-columns:1fr;
       }
-
       h1{font-size:44px}
-      .hero-card-title{font-size:42px}
+      .hero-title{font-size:42px}
       .section-head h2{font-size:30px}
       .cta h2{font-size:32px}
       .nav-links{display:none}
@@ -521,13 +520,13 @@
 
     @media (max-width: 640px){
       .nav-inner{padding:12px 16px}
-      .hero-copy,
+      .hero-left,
       .section-card,
       .cta{padding:24px}
-      .hero-card-inner{padding:20px; min-height:500px}
+      .hero-right-inner{padding:20px; min-height:500px}
       h1{font-size:36px}
       .lead{font-size:17px}
-      .hero-card-title{font-size:34px}
+      .hero-title{font-size:34px}
       .hero-panel-grid{grid-template-columns:1fr}
       .hero-panel-item{
         border-right:none;
@@ -537,6 +536,12 @@
       .hero-panel-item:last-child{
         border-bottom:none;
         padding-bottom:0;
+      }
+      .floating-wa{
+        width:58px;
+        height:58px;
+        right:16px;
+        bottom:16px;
       }
     }
   </style>
@@ -558,7 +563,7 @@
       </nav>
 
       <div class="nav-actions">
-        <a class="btn btn-outline" href="https://wa.me/3197010238454" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn btn-outline" href="https://wa.me/380957380721" target="_blank" rel="noopener">WhatsApp</a>
         <a class="btn btn-primary" href="https://www.finora-hub.com" target="_blank" rel="noopener">Start Assessment</a>
       </div>
     </div>
@@ -567,36 +572,34 @@
   <main class="wrap">
     <section class="hero">
       <div class="hero-grid">
-        <div class="hero-copy">
+        <div class="hero-left">
           <div class="eyebrow">Structured investor profile assessment</div>
           <h1>
             A calmer way to explore
-            <span style="color:var(--green)">investment direction</span>
+            <span class="accent">investment direction</span>
             with clarity and trust.
           </h1>
           <p class="lead">
-            Finora helps users understand their profile, preferences, and next step through a modern assessment experience focused on reliability, structure, and clear communication.
+            Finora helps users understand their profile, preferences, and next steps through a modern assessment experience focused on reliability, structure, and clear communication.
           </p>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://www.finora-hub.com" target="_blank" rel="noopener">Open Assessment</a>
-            <a class="btn btn-outline" href="https://wa.me/380000000000" target="_blank" rel="noopener">Chat on WhatsApp</a>
+            <a class="btn btn-outline" href="https://wa.me/380957380721" target="_blank" rel="noopener">Chat on WhatsApp</a>
           </div>
 
-          <div class="badge-row">
+          <div class="hero-badges">
             <div class="badge">Private-first communication</div>
             <div class="badge">Simple onboarding</div>
             <div class="badge">Structured assessment flow</div>
           </div>
         </div>
 
-        <div class="hero-card">
-          <div class="hero-card-inner">
+        <div class="hero-right">
+          <div class="hero-right-inner">
             <div>
-              <div class="hero-card-top">
-                <img src="logo-white.png" alt="Finora white logo" onerror="this.style.display='none';" />
-              </div>
-              <div class="hero-card-title">Investor Profile Assessment</div>
+              <img class="hero-logo" src="logo.png" alt="Finora logo" onerror="this.style.display='none';" />
+              <div class="hero-title">Investor Profile Assessment</div>
             </div>
 
             <div class="hero-panel">
@@ -623,29 +626,27 @@
     <section id="about" class="section">
       <div class="section-card">
         <div class="section-head">
-          <div>
-            <h2>What Finora is</h2>
-            <p>
-              Finora is a clean assessment-led experience designed to help users explore investment-related preferences in a structured, calm, and more reliable way. The goal is not pressure — it is clarity, trust, and better qualification.
-            </p>
-          </div>
+          <h2>What Finora is</h2>
+          <p>
+            Finora is a modern assessment-led experience designed to help users explore investment-related preferences in a more structured, calm, and reliability-focused way.
+          </p>
         </div>
 
         <div class="three">
           <div class="mini">
             <div class="mini-num">1</div>
             <h3>Clear structure</h3>
-            <p>Users move through a simple flow that helps organize profile, preferences, and direction without overload.</p>
+            <p>Users move through a simple journey that helps organize profile, preferences, and direction without overload.</p>
           </div>
           <div class="mini">
             <div class="mini-num">2</div>
             <h3>Professional tone</h3>
-            <p>The experience is designed to feel modern, serious, and stable — not aggressive, noisy, or hype-driven.</p>
+            <p>The experience is designed to feel modern, serious, and stable — not noisy, not aggressive, not hype-driven.</p>
           </div>
           <div class="mini">
             <div class="mini-num">3</div>
             <h3>Better trust</h3>
-            <p>A clean brand presence and consistent domain structure help improve user confidence and message credibility.</p>
+            <p>A cleaner brand presence and clearer structure help improve confidence and message credibility.</p>
           </div>
         </div>
       </div>
@@ -654,29 +655,27 @@
     <section id="process" class="section">
       <div class="section-card">
         <div class="section-head">
-          <div>
-            <h2>How it works</h2>
-            <p>
-              The process is intentionally simple: users open the assessment, complete a short flow, and continue into a more qualified path based on their responses.
-            </p>
-          </div>
+          <h2>How it works</h2>
+          <p>
+            The process is intentionally simple: users open the assessment, complete a short guided flow, and continue into a more qualified path based on their responses.
+          </p>
         </div>
 
         <div class="three">
           <div class="mini">
             <div class="mini-num">1</div>
             <h3>Start assessment</h3>
-            <p>Users open the assessment from the main landing page and begin with a short, guided entry flow.</p>
+            <p>Users begin with a short, guided entry flow through the main assessment experience.</p>
           </div>
           <div class="mini">
             <div class="mini-num">2</div>
             <h3>Complete profile</h3>
-            <p>The assessment helps organize preferences, interests, and direction in a clean and intuitive format.</p>
+            <p>The assessment organizes preferences, interests, and direction in a cleaner and more intuitive format.</p>
           </div>
           <div class="mini">
             <div class="mini-num">3</div>
             <h3>Continue with clarity</h3>
-            <p>After completion, users can continue to the next step through a more structured and relevant communication path.</p>
+            <p>After completion, users can continue to the next step through a more structured communication path.</p>
           </div>
         </div>
       </div>
@@ -685,18 +684,16 @@
     <section id="reliability" class="section">
       <div class="section-card">
         <div class="section-head">
-          <div>
-            <h2>Built around reliability</h2>
-            <p>
-              Every part of the site is designed to communicate stability, professionalism, and a clear user journey.
-            </p>
-          </div>
+          <h2>Built around reliability</h2>
+          <p>
+            Every part of the site is designed to communicate stability, professionalism, and a clear user journey.
+          </p>
         </div>
 
         <div class="trust-grid">
           <div class="list">
             <div class="list-item">
-              <div class="dot"></div>
+              <div class="point"></div>
               <div>
                 <strong>Professional brand presence</strong>
                 <span>Consistent visual language, clear structure, and a calmer layout improve trust from the first screen.</span>
@@ -704,7 +701,7 @@
             </div>
 
             <div class="list-item">
-              <div class="dot"></div>
+              <div class="point"></div>
               <div>
                 <strong>Simple navigation</strong>
                 <span>Users understand where to click, what to expect, and how to continue without confusion.</span>
@@ -712,7 +709,7 @@
             </div>
 
             <div class="list-item">
-              <div class="dot"></div>
+              <div class="point"></div>
               <div>
                 <strong>Message-friendly structure</strong>
                 <span>The site supports cleaner communication and a more legitimate-looking destination for outreach and follow-up.</span>
@@ -728,10 +725,10 @@
               </p>
             </div>
 
-            <div class="whatsapp-box">
-              <a class="btn btn-primary" href="https://wa.me/380000000000" target="_blank" rel="noopener">Open WhatsApp</a>
+            <div class="contact-box">
+              <a class="btn btn-primary" href="https://wa.me/380957380721" target="_blank" rel="noopener">Open WhatsApp</a>
               <small>
-                Replace the number in the code with your real WhatsApp number in international format. Example: 380XXXXXXXXX
+                You can also adjust the assessment flow and contact route later without rebuilding the full site.
               </small>
             </div>
           </div>
@@ -749,7 +746,7 @@
         </div>
         <div style="display:flex; gap:12px; flex-wrap:wrap;">
           <a class="btn btn-primary" href="https://www.finora-hub.com" target="_blank" rel="noopener">Start Assessment</a>
-          <a class="btn btn-outline" href="https://wa.me/380000000000" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-outline" href="https://wa.me/380957380721" target="_blank" rel="noopener">WhatsApp</a>
         </div>
       </div>
     </section>
@@ -766,5 +763,15 @@
     </footer>
   </main>
 
+  <a class="floating-wa" href="https://wa.me/380957380721" target="_blank" rel="noopener" aria-label="Open WhatsApp">
+    ✆
+  </a>
+
 </body>
 </html>
+
+Я так понял там нет того что ты сказал добавить? 1️⃣ плавающую кнопку WhatsApp
+2️⃣ блок доверия
+3️⃣ сделать страницу квиза /quiz
+
+Это займёт 3 минуты, но сайт станет выглядеть как настоящий финтех сервис. 
