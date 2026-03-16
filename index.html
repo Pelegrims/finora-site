@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Finora | Investor Profile Assessment</title>
-  <meta
-    name="description"
-    content="Finora provides a structured investor profile assessment experience focused on clarity, reliability, and modern communication."
-  />
+  <meta name="description" content="Finora provides a structured investor profile assessment experience focused on clarity, reliability, and modern communication." />
   <link rel="icon" type="image/png" href="favicon.png" />
 
   <style>
@@ -20,7 +17,6 @@
       --green:#147a5d;
       --green2:#2fc18b;
       --green3:#0f5643;
-      --dark:#0b1d19;
       --shadow:0 18px 48px rgba(8,31,24,.10);
       --radius:26px;
       --max:1180px;
@@ -105,6 +101,29 @@
       display:flex;
       align-items:center;
       gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .lang-switch{
+      display:flex;
+      border:1px solid rgba(18,41,34,.10);
+      border-radius:999px;
+      overflow:hidden;
+      background:#fff;
+    }
+
+    .lang-btn{
+      border:none;
+      background:transparent;
+      padding:10px 14px;
+      cursor:pointer;
+      font-weight:700;
+      color:var(--muted);
+    }
+
+    .lang-btn.active{
+      background:linear-gradient(135deg,var(--green),var(--green2));
+      color:#fff;
     }
 
     .btn{
@@ -556,15 +575,19 @@
       </a>
 
       <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#process">How it works</a>
-        <a href="#reliability">Reliability</a>
-        <a href="#contact">Contact</a>
+        <a href="#about" data-i18n="nav_about">About</a>
+        <a href="#process" data-i18n="nav_process">How it works</a>
+        <a href="#reliability" data-i18n="nav_reliability">Reliability</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
       </nav>
 
       <div class="nav-actions">
-        <a class="btn btn-outline" href="https://wa.me/380957380721" target="_blank" rel="noopener">WhatsApp</a>
-        <a class="btn btn-primary" href="https://www.finora-hub.com" target="_blank" rel="noopener">Start Assessment</a>
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="ru">RU</button>
+        </div>
+        <a class="btn btn-outline" href="https://wa.me/380957380721" target="_blank" rel="noopener" data-i18n="wa_btn">WhatsApp</a>
+        <a class="btn btn-primary" href="https://www.finora-hub.com" target="_blank" rel="noopener" data-i18n="start_btn">Start Assessment</a>
       </div>
     </div>
   </header>
@@ -573,25 +596,25 @@
     <section class="hero">
       <div class="hero-grid">
         <div class="hero-left">
-          <div class="eyebrow">Structured investor profile assessment</div>
-          <h1>
+          <div class="eyebrow" data-i18n="eyebrow">Structured investor profile assessment</div>
+          <h1 data-i18n-html="hero_title">
             A calmer way to explore
             <span class="accent">investment direction</span>
             with clarity and trust.
           </h1>
-          <p class="lead">
+          <p class="lead" data-i18n="hero_text">
             Finora helps users understand their profile, preferences, and next steps through a modern assessment experience focused on reliability, structure, and clear communication.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://www.finora-hub.com" target="_blank" rel="noopener">Open Assessment</a>
-            <a class="btn btn-outline" href="https://wa.me/380957380721" target="_blank" rel="noopener">Chat on WhatsApp</a>
+            <a class="btn btn-primary" href="https://www.finora-hub.com" target="_blank" rel="noopener" data-i18n="open_assessment">Open Assessment</a>
+            <a class="btn btn-outline" href="https://wa.me/380957380721" target="_blank" rel="noopener" data-i18n="chat_whatsapp">Chat on WhatsApp</a>
           </div>
 
           <div class="hero-badges">
-            <div class="badge">Private-first communication</div>
-            <div class="badge">Simple onboarding</div>
-            <div class="badge">Structured assessment flow</div>
+            <div class="badge" data-i18n="badge_1">Private-first communication</div>
+            <div class="badge" data-i18n="badge_2">Simple onboarding</div>
+            <div class="badge" data-i18n="badge_3">Structured assessment flow</div>
           </div>
         </div>
 
@@ -599,22 +622,22 @@
           <div class="hero-right-inner">
             <div>
               <img class="hero-logo" src="logo.png" alt="Finora logo" onerror="this.style.display='none';" />
-              <div class="hero-title">Investor Profile Assessment</div>
+              <div class="hero-title" data-i18n="hero_card_title">Investor Profile Assessment</div>
             </div>
 
             <div class="hero-panel">
               <div class="hero-panel-grid">
                 <div class="hero-panel-item">
                   <strong>01</strong>
-                  <span>Profile check</span>
+                  <span data-i18n="panel_1">Profile check</span>
                 </div>
                 <div class="hero-panel-item">
                   <strong>02</strong>
-                  <span>Preference view</span>
+                  <span data-i18n="panel_2">Preference view</span>
                 </div>
                 <div class="hero-panel-item">
                   <strong>03</strong>
-                  <span>Next-step clarity</span>
+                  <span data-i18n="panel_3">Next-step clarity</span>
                 </div>
               </div>
             </div>
@@ -626,8 +649,8 @@
     <section id="about" class="section">
       <div class="section-card">
         <div class="section-head">
-          <h2>What Finora is</h2>
-          <p>
+          <h2 data-i18n="about_title">What Finora is</h2>
+          <p data-i18n="about_text">
             Finora is a modern assessment-led experience designed to help users explore investment-related preferences in a more structured, calm, and reliability-focused way.
           </p>
         </div>
@@ -635,18 +658,18 @@
         <div class="three">
           <div class="mini">
             <div class="mini-num">1</div>
-            <h3>Clear structure</h3>
-            <p>Users move through a simple journey that helps organize profile, preferences, and direction without overload.</p>
+            <h3 data-i18n="about_card_1_title">Clear structure</h3>
+            <p data-i18n="about_card_1_text">Users move through a simple journey that helps organize profile, preferences, and direction without overload.</p>
           </div>
           <div class="mini">
             <div class="mini-num">2</div>
-            <h3>Professional tone</h3>
-            <p>The experience is designed to feel modern, serious, and stable — not noisy, not aggressive, not hype-driven.</p>
+            <h3 data-i18n="about_card_2_title">Professional tone</h3>
+            <p data-i18n="about_card_2_text">The experience is designed to feel modern, serious, and stable — not noisy, not aggressive, not hype-driven.</p>
           </div>
           <div class="mini">
             <div class="mini-num">3</div>
-            <h3>Better trust</h3>
-            <p>A cleaner brand presence and clearer structure help improve confidence and message credibility.</p>
+            <h3 data-i18n="about_card_3_title">Better trust</h3>
+            <p data-i18n="about_card_3_text">A cleaner brand presence and clearer structure help improve confidence and message credibility.</p>
           </div>
         </div>
       </div>
@@ -655,8 +678,8 @@
     <section id="process" class="section">
       <div class="section-card">
         <div class="section-head">
-          <h2>How it works</h2>
-          <p>
+          <h2 data-i18n="process_title">How it works</h2>
+          <p data-i18n="process_text">
             The process is intentionally simple: users open the assessment, complete a short guided flow, and continue into a more qualified path based on their responses.
           </p>
         </div>
@@ -664,18 +687,18 @@
         <div class="three">
           <div class="mini">
             <div class="mini-num">1</div>
-            <h3>Start assessment</h3>
-            <p>Users begin with a short, guided entry flow through the main assessment experience.</p>
+            <h3 data-i18n="process_card_1_title">Start assessment</h3>
+            <p data-i18n="process_card_1_text">Users begin with a short, guided entry flow through the main assessment experience.</p>
           </div>
           <div class="mini">
             <div class="mini-num">2</div>
-            <h3>Complete profile</h3>
-            <p>The assessment organizes preferences, interests, and direction in a cleaner and more intuitive format.</p>
+            <h3 data-i18n="process_card_2_title">Complete profile</h3>
+            <p data-i18n="process_card_2_text">The assessment organizes preferences, interests, and direction in a cleaner and more intuitive format.</p>
           </div>
           <div class="mini">
             <div class="mini-num">3</div>
-            <h3>Continue with clarity</h3>
-            <p>After completion, users can continue to the next step through a more structured communication path.</p>
+            <h3 data-i18n="process_card_3_title">Continue with clarity</h3>
+            <p data-i18n="process_card_3_text">After completion, users can continue to the next step through a more structured communication path.</p>
           </div>
         </div>
       </div>
@@ -684,8 +707,8 @@
     <section id="reliability" class="section">
       <div class="section-card">
         <div class="section-head">
-          <h2>Built around reliability</h2>
-          <p>
+          <h2 data-i18n="reliability_title">Built around reliability</h2>
+          <p data-i18n="reliability_text">
             Every part of the site is designed to communicate stability, professionalism, and a clear user journey.
           </p>
         </div>
@@ -695,39 +718,39 @@
             <div class="list-item">
               <div class="point"></div>
               <div>
-                <strong>Professional brand presence</strong>
-                <span>Consistent visual language, clear structure, and a calmer layout improve trust from the first screen.</span>
+                <strong data-i18n="rel_item_1_title">Professional brand presence</strong>
+                <span data-i18n="rel_item_1_text">Consistent visual language, clear structure, and a calmer layout improve trust from the first screen.</span>
               </div>
             </div>
 
             <div class="list-item">
               <div class="point"></div>
               <div>
-                <strong>Simple navigation</strong>
-                <span>Users understand where to click, what to expect, and how to continue without confusion.</span>
+                <strong data-i18n="rel_item_2_title">Simple navigation</strong>
+                <span data-i18n="rel_item_2_text">Users understand where to click, what to expect, and how to continue without confusion.</span>
               </div>
             </div>
 
             <div class="list-item">
               <div class="point"></div>
               <div>
-                <strong>Message-friendly structure</strong>
-                <span>The site supports cleaner communication and a more legitimate-looking destination for outreach and follow-up.</span>
+                <strong data-i18n="rel_item_3_title">Message-friendly structure</strong>
+                <span data-i18n="rel_item_3_text">The site supports cleaner communication and a more legitimate-looking destination for outreach and follow-up.</span>
               </div>
             </div>
           </div>
 
           <div id="contact" class="side-card">
             <div>
-              <h3>Direct contact</h3>
-              <p>
+              <h3 data-i18n="contact_title">Direct contact</h3>
+              <p data-i18n="contact_text">
                 For questions or a direct conversation, users can continue via WhatsApp or email. This keeps communication simple and accessible.
               </p>
             </div>
 
             <div class="contact-box">
-              <a class="btn btn-primary" href="https://wa.me/380957380721" target="_blank" rel="noopener">Open WhatsApp</a>
-              <small>
+              <a class="btn btn-primary" href="https://wa.me/380957380721" target="_blank" rel="noopener" data-i18n="contact_btn">Open WhatsApp</a>
+              <small data-i18n="contact_note">
                 You can also adjust the assessment flow and contact route later without rebuilding the full site.
               </small>
             </div>
@@ -739,21 +762,21 @@
     <section class="section">
       <div class="cta">
         <div>
-          <h2>Ready to start the assessment?</h2>
-          <p>
+          <h2 data-i18n="cta_title">Ready to start the assessment?</h2>
+          <p data-i18n="cta_text">
             Open the Finora Investor Profile Assessment and continue through the main flow in a cleaner, more structured environment.
           </p>
         </div>
         <div style="display:flex; gap:12px; flex-wrap:wrap;">
-          <a class="btn btn-primary" href="https://www.finora-hub.com" target="_blank" rel="noopener">Start Assessment</a>
-          <a class="btn btn-outline" href="https://wa.me/380957380721" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-primary" href="https://www.finora-hub.com" target="_blank" rel="noopener" data-i18n="cta_btn_main">Start Assessment</a>
+          <a class="btn btn-outline" href="https://wa.me/380957380721" target="_blank" rel="noopener" data-i18n="cta_btn_wa">WhatsApp</a>
         </div>
       </div>
     </section>
 
     <footer class="footer">
       <div class="footer-inner">
-        <div class="footer-note">
+        <div class="footer-note" data-i18n="footer_note">
           © 2026 Finora. All rights reserved. This website is intended to provide a structured assessment entry experience and general informational communication.
         </div>
         <div>
@@ -766,6 +789,140 @@
   <a class="floating-wa" href="https://wa.me/380957380721" target="_blank" rel="noopener" aria-label="Open WhatsApp">
     ✆
   </a>
+
+  <script>
+    const translations = {
+      en: {
+        nav_about: "About",
+        nav_process: "How it works",
+        nav_reliability: "Reliability",
+        nav_contact: "Contact",
+        wa_btn: "WhatsApp",
+        start_btn: "Start Assessment",
+        eyebrow: "Structured investor profile assessment",
+        hero_title: 'A calmer way to explore <span class="accent">investment direction</span> with clarity and trust.',
+        hero_text: "Finora helps users understand their profile, preferences, and next steps through a modern assessment experience focused on reliability, structure, and clear communication.",
+        open_assessment: "Open Assessment",
+        chat_whatsapp: "Chat on WhatsApp",
+        badge_1: "Private-first communication",
+        badge_2: "Simple onboarding",
+        badge_3: "Structured assessment flow",
+        hero_card_title: "Investor Profile Assessment",
+        panel_1: "Profile check",
+        panel_2: "Preference view",
+        panel_3: "Next-step clarity",
+        about_title: "What Finora is",
+        about_text: "Finora is a modern assessment-led experience designed to help users explore investment-related preferences in a more structured, calm, and reliability-focused way.",
+        about_card_1_title: "Clear structure",
+        about_card_1_text: "Users move through a simple journey that helps organize profile, preferences, and direction without overload.",
+        about_card_2_title: "Professional tone",
+        about_card_2_text: "The experience is designed to feel modern, serious, and stable — not noisy, not aggressive, not hype-driven.",
+        about_card_3_title: "Better trust",
+        about_card_3_text: "A cleaner brand presence and clearer structure help improve confidence and message credibility.",
+        process_title: "How it works",
+        process_text: "The process is intentionally simple: users open the assessment, complete a short guided flow, and continue into a more qualified path based on their responses.",
+        process_card_1_title: "Start assessment",
+        process_card_1_text: "Users begin with a short, guided entry flow through the main assessment experience.",
+        process_card_2_title: "Complete profile",
+        process_card_2_text: "The assessment organizes preferences, interests, and direction in a cleaner and more intuitive format.",
+        process_card_3_title: "Continue with clarity",
+        process_card_3_text: "After completion, users can continue to the next step through a more structured communication path.",
+        reliability_title: "Built around reliability",
+        reliability_text: "Every part of the site is designed to communicate stability, professionalism, and a clear user journey.",
+        rel_item_1_title: "Professional brand presence",
+        rel_item_1_text: "Consistent visual language, clear structure, and a calmer layout improve trust from the first screen.",
+        rel_item_2_title: "Simple navigation",
+        rel_item_2_text: "Users understand where to click, what to expect, and how to continue without confusion.",
+        rel_item_3_title: "Message-friendly structure",
+        rel_item_3_text: "The site supports cleaner communication and a more legitimate-looking destination for outreach and follow-up.",
+        contact_title: "Direct contact",
+        contact_text: "For questions or a direct conversation, users can continue via WhatsApp or email. This keeps communication simple and accessible.",
+        contact_btn: "Open WhatsApp",
+        contact_note: "You can also adjust the assessment flow and contact route later without rebuilding the full site.",
+        cta_title: "Ready to start the assessment?",
+        cta_text: "Open the Finora Investor Profile Assessment and continue through the main flow in a cleaner, more structured environment.",
+        cta_btn_main: "Start Assessment",
+        cta_btn_wa: "WhatsApp",
+        footer_note: "© 2026 Finora. All rights reserved. This website is intended to provide a structured assessment entry experience and general informational communication."
+      },
+      ru: {
+        nav_about: "О нас",
+        nav_process: "Как это работает",
+        nav_reliability: "Надёжность",
+        nav_contact: "Контакты",
+        wa_btn: "WhatsApp",
+        start_btn: "Пройти оценку",
+        eyebrow: "Структурированная оценка инвестиционного профиля",
+        hero_title: 'Спокойный способ определить <span class="accent">инвестиционное направление</span> с ясностью и доверием.',
+        hero_text: "Finora помогает пользователям лучше понять свой профиль, предпочтения и дальнейшие шаги через современный assessment-подход с акцентом на надёжность, структуру и понятную коммуникацию.",
+        open_assessment: "Открыть оценку",
+        chat_whatsapp: "Написать в WhatsApp",
+        badge_1: "Деликатная коммуникация",
+        badge_2: "Простой старт",
+        badge_3: "Структурированный assessment-flow",
+        hero_card_title: "Оценка инвестиционного профиля",
+        panel_1: "Проверка профиля",
+        panel_2: "Анализ предпочтений",
+        panel_3: "Ясность следующего шага",
+        about_title: "Что такое Finora",
+        about_text: "Finora — это современный assessment-формат, который помогает пользователям изучить инвестиционные предпочтения в более структурированной, спокойной и надёжной форме.",
+        about_card_1_title: "Чёткая структура",
+        about_card_1_text: "Пользователь проходит понятный путь, который помогает собрать профиль, предпочтения и направление без перегруза.",
+        about_card_2_title: "Профессиональный тон",
+        about_card_2_text: "Опыт взаимодействия должен выглядеть современно, серьёзно и стабильно — без шума, агрессии и навязчивости.",
+        about_card_3_title: "Больше доверия",
+        about_card_3_text: "Чистый бренд и понятная структура усиливают уверенность пользователя и доверие к коммуникации.",
+        process_title: "Как это работает",
+        process_text: "Процесс специально сделан простым: пользователь открывает assessment, проходит короткий сценарий и продолжает путь уже в более квалифицированной форме.",
+        process_card_1_title: "Начало оценки",
+        process_card_1_text: "Пользователь начинает с короткого и понятного сценария входа в основной assessment-flow.",
+        process_card_2_title: "Заполнение профиля",
+        process_card_2_text: "Assessment помогает структурировать интересы, предпочтения и направление в более удобном формате.",
+        process_card_3_title: "Переход дальше",
+        process_card_3_text: "После завершения пользователь может перейти к следующему этапу через более понятную и релевантную коммуникацию.",
+        reliability_title: "Основа — надёжность",
+        reliability_text: "Каждая часть сайта создана так, чтобы передавать стабильность, профессиональность и понятный путь пользователя.",
+        rel_item_1_title: "Профессиональный образ",
+        rel_item_1_text: "Единый визуальный стиль, аккуратная структура и спокойная подача усиливают доверие с первого экрана.",
+        rel_item_2_title: "Простая навигация",
+        rel_item_2_text: "Пользователь понимает, куда нажать, чего ожидать и как двигаться дальше без лишней путаницы.",
+        rel_item_3_title: "Удобная структура для коммуникации",
+        rel_item_3_text: "Сайт помогает сделать коммуникацию более чистой и выглядит как более надёжная точка входа для дальнейшего контакта.",
+        contact_title: "Прямой контакт",
+        contact_text: "Для вопросов или прямого общения пользователь может перейти в WhatsApp или написать на email. Это делает коммуникацию простой и доступной.",
+        contact_btn: "Открыть WhatsApp",
+        contact_note: "Позже можно будет изменить assessment-flow и маршрут контакта без полной переделки сайта.",
+        cta_title: "Готовы пройти оценку?",
+        cta_text: "Откройте Finora Investor Profile Assessment и продолжите основной сценарий в более чистой и структурированной среде.",
+        cta_btn_main: "Пройти оценку",
+        cta_btn_wa: "WhatsApp",
+        footer_note: "© 2026 Finora. Все права защищены. Этот сайт предназначен для структурированного входа в assessment и общей информационной коммуникации."
+      }
+    };
+
+    function applyLanguage(lang){
+      document.documentElement.lang = lang;
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if(translations[lang][key]) el.textContent = translations[lang][key];
+      });
+      document.querySelectorAll("[data-i18n-html]").forEach(el => {
+        const key = el.getAttribute("data-i18n-html");
+        if(translations[lang][key]) el.innerHTML = translations[lang][key];
+      });
+      document.querySelectorAll(".lang-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.lang === lang);
+      });
+      localStorage.setItem("finora_lang", lang);
+    }
+
+    document.querySelectorAll(".lang-btn").forEach(btn => {
+      btn.addEventListener("click", () => applyLanguage(btn.dataset.lang));
+    });
+
+    const savedLang = localStorage.getItem("finora_lang") || "ru";
+    applyLanguage(savedLang);
+  </script>
 
 </body>
 </html>
